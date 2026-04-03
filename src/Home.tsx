@@ -1,11 +1,5 @@
 import { useEffect, useState } from "react";
 
-interface ChildProps {
-  name: string;
-  age: number;
-  color?: string;
-}
-
 type data = {
   id: number;
   name: string;
@@ -13,7 +7,7 @@ type data = {
   status: boolean;
 };
 
-const Home: React.FC<ChildProps> = () => {
+const Home: React.FC = () => {
   const [tasks, setTasks] = useState<data[]>(() => {
     const saved = localStorage.getItem("tasks");
     return saved ? JSON.parse(saved) : [];
